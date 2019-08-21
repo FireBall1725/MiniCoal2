@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+issueTrackerURL="https://github.com/FireBall1725/minicoal2/issues"
+
+[[mods]]
+modId="minicoal2"
+version="0.2.0"
+displayName="MiniCoal 2"
+displayURL="https://github.com/FireBall1725/minicoal2"
+logoFile=""
+credits="Original mod by KiwiFails, ported and maintained by FireBall1725"
+authors="KiwiFails, FireBall1725"
+description="MiniCoal2 is a tiny mod that adds mini coal and charcoal that each will smelt 1 item."
+
+[[dependencies.minicoal2]]
+  modId="forge"
+  mandatory=true
+  versionRange="[28,)"
+  ordering="NONE"
+  side="CLIENT"
+
+[[dependencies.minicoal2]]
+  modId="minecraft"
+  mandatory=true
+  versionRange="[1.14.4]"
+  ordering="NONE"
+  side="CLIENT"
