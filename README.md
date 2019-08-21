@@ -1,0 +1,1 @@
+MiniCoal2
