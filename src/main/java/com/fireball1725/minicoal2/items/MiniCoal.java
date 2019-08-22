@@ -16,7 +16,22 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.fireball1725.minicoal2.proxy;
+package com.fireball1725.minicoal2.items;
 
-public abstract class CommonProxy implements IProxy {
+import com.fireball1725.minicoal2.MiniCoal2;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+public class MiniCoal extends Item {
+  public MiniCoal() {
+    super (new Item.Properties()
+      .group(MiniCoal2.groups.itemGroup)
+    );
+    setRegistryName("minicoal");
+  }
+
+  @Override
+  public int getBurnTime(ItemStack itemStack) {
+    return 200;
+  }
 }

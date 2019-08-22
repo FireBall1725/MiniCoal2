@@ -16,7 +16,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.fireball1725.minicoal2.proxy;
+package com.fireball1725.minicoal2.common;
 
-public class ClientProxy extends CommonProxy {
+import com.fireball1725.minicoal2.items.Items;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+
+public class Groups {
+  public ItemGroup itemGroup = new ItemGroup("minicoal2") {
+    @Override
+    public ItemStack createIcon() {
+      return new ItemStack(Items.MINICOAL.getItem());
+    }
+  };
 }

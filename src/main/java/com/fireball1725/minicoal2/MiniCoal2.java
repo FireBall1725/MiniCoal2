@@ -18,18 +18,23 @@
 
 package com.fireball1725.minicoal2;
 
-import com.fireball1725.minicoal2.proxy.ClientProxy;
-import com.fireball1725.minicoal2.proxy.IProxy;
-import com.fireball1725.minicoal2.proxy.ServerProxy;
-import net.minecraftforge.fml.DistExecutor;
+import com.fireball1725.minicoal2.common.Groups;
+import com.fireball1725.minicoal2.items.Items;
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod("minicoal2")
 public class MiniCoal2 {
-  private static final Logger LOGGER = LogManager.getLogger();
+  public static Groups groups = new Groups();
 
-  public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
+  @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+  public static class RegistryEvents {
+    @SubscribeEvent
+    public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
+      Items.registerItems(event);
+    }
+  }
 }
 

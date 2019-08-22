@@ -16,7 +16,32 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.fireball1725.minicoal2.proxy;
+package com.fireball1725.minicoal2.items;
 
-public interface IProxy {
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
+
+public enum Items {
+  MINICOAL(new MiniCoal()),
+  MINICHARCOAL(new MiniCharcoal());
+
+  public final Item item;
+
+  Items(Item item) {
+    this.item = item;
+  }
+
+  public static void registerItems(RegistryEvent.Register<Item> event) {
+    for (Items i : Items.values()) {
+      i.register(event);
+    }
+  }
+
+  public void register(RegistryEvent.Register<Item> event) {
+    event.getRegistry().register(this.item);
+  }
+
+  public Item getItem() {
+    return this.item;
+  }
 }
