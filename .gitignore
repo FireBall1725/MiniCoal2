@@ -14,4 +14,5 @@
 !/build.sh
 !/gradle.properties
 !/webresources
+!/.circleci
 .DS_Store
