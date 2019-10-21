@@ -16,15 +16,22 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-configurations {
-    shade
-    compile.extendsFrom shade
-}
+package ca.fireball1725.mods.minicoal2.items;
 
-jar {
-    configurations.shade.each { dep ->
-        from(project.zipTree(dep)) {
-            exclude('META-INF', 'META-INF/**')
-        }
-    }
+import ca.fireball1725.mods.minicoal2.MiniCoal2;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+public class MiniCharcoal extends Item {
+  public MiniCharcoal() {
+    super (new Item.Properties()
+              .group(MiniCoal2.groups.itemGroup)
+    );
+    setRegistryName("minicharcoal");
+  }
+
+  @Override
+  public int getBurnTime(ItemStack itemStack) {
+    return 200;
+  }
 }

@@ -16,12 +16,32 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-apply plugin: 'com.selesse.git.changelog'
+package ca.fireball1725.mods.minicoal2.items;
 
-changelog {
-    title = "${project.name} - Changelog"
-    outputDirectory = file("$projectDir")
-    fileName = "CHANGELOG.md"
-    since = "beginning"
-    formats = ['markdown']
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
+
+public enum Items {
+  MINICOAL(new MiniCoal()),
+  MINICHARCOAL(new MiniCharcoal());
+
+  public final Item item;
+
+  Items(Item item) {
+    this.item = item;
+  }
+
+  public static void registerItems(RegistryEvent.Register<Item> event) {
+    for (Items i : Items.values()) {
+      i.register(event);
+    }
+  }
+
+  public void register(RegistryEvent.Register<Item> event) {
+    event.getRegistry().register(this.item);
+  }
+
+  public Item getItem() {
+    return this.item;
+  }
 }

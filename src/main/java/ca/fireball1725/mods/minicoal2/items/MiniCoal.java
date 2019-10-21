@@ -16,25 +16,22 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.fireball1725.minicoal2;
+package ca.fireball1725.mods.minicoal2.items;
 
-import com.fireball1725.minicoal2.common.Groups;
-import com.fireball1725.minicoal2.items.Items;
+import ca.fireball1725.mods.minicoal2.MiniCoal2;
 import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraft.item.ItemStack;
 
-@Mod("minicoal2")
-public class MiniCoal2 {
-  public static Groups groups = new Groups();
+public class MiniCoal extends Item {
+  public MiniCoal() {
+    super (new Item.Properties()
+      .group(MiniCoal2.groups.itemGroup)
+    );
+    setRegistryName("minicoal");
+  }
 
-  @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-  public static class RegistryEvents {
-    @SubscribeEvent
-    public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-      Items.registerItems(event);
-    }
+  @Override
+  public int getBurnTime(ItemStack itemStack) {
+    return 200;
   }
 }
-
