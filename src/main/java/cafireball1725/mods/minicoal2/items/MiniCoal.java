@@ -16,12 +16,22 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-apply plugin: 'com.selesse.git.changelog'
+package cafireball1725.mods.minicoal2.items;
 
-changelog {
-    title = "${project.name} - Changelog"
-    outputDirectory = file("$projectDir")
-    fileName = "CHANGELOG.md"
-    since = "beginning"
-    formats = ['markdown']
+import cafireball1725.mods.minicoal2.MiniCoal2;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+public class MiniCoal extends Item {
+  public MiniCoal() {
+    super (new Item.Properties()
+      .group(MiniCoal2.groups.itemGroup)
+    );
+    setRegistryName("minicoal");
+  }
+
+  @Override
+  public int getBurnTime(ItemStack itemStack) {
+    return 200;
+  }
 }

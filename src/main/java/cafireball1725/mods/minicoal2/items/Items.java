@@ -16,25 +16,32 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.fireball1725.minicoal2;
+package cafireball1725.mods.minicoal2.items;
 
-import com.fireball1725.minicoal2.common.Groups;
-import com.fireball1725.minicoal2.items.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 
-@Mod("minicoal2")
-public class MiniCoal2 {
-  public static Groups groups = new Groups();
+public enum Items {
+  MINICOAL(new MiniCoal()),
+  MINICHARCOAL(new MiniCharcoal());
 
-  @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-  public static class RegistryEvents {
-    @SubscribeEvent
-    public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-      Items.registerItems(event);
+  public final Item item;
+
+  Items(Item item) {
+    this.item = item;
+  }
+
+  public static void registerItems(RegistryEvent.Register<Item> event) {
+    for (Items i : Items.values()) {
+      i.register(event);
     }
   }
-}
 
+  public void register(RegistryEvent.Register<Item> event) {
+    event.getRegistry().register(this.item);
+  }
+
+  public Item getItem() {
+    return this.item;
+  }
+}

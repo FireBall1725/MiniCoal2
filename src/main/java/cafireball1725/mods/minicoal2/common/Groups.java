@@ -16,15 +16,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-configurations {
-    shade
-    compile.extendsFrom shade
-}
+package cafireball1725.mods.minicoal2.common;
 
-jar {
-    configurations.shade.each { dep ->
-        from(project.zipTree(dep)) {
-            exclude('META-INF', 'META-INF/**')
-        }
+import cafireball1725.mods.minicoal2.items.Items;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+
+public class Groups {
+  public ItemGroup itemGroup = new ItemGroup("minicoal2") {
+    @Override
+    public ItemStack createIcon() {
+      return new ItemStack(Items.MINICOAL.getItem());
     }
+  };
 }

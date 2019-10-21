@@ -16,17 +16,22 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.fireball1725.minicoal2.common;
+package cafireball1725.mods.minicoal2.items;
 
-import com.fireball1725.minicoal2.items.Items;
-import net.minecraft.item.ItemGroup;
+import cafireball1725.mods.minicoal2.MiniCoal2;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class Groups {
-  public ItemGroup itemGroup = new ItemGroup("minicoal2") {
-    @Override
-    public ItemStack createIcon() {
-      return new ItemStack(Items.MINICOAL.getItem());
-    }
-  };
+public class MiniCharcoal extends Item {
+  public MiniCharcoal() {
+    super (new Item.Properties()
+              .group(MiniCoal2.groups.itemGroup)
+    );
+    setRegistryName("minicharcoal");
+  }
+
+  @Override
+  public int getBurnTime(ItemStack itemStack) {
+    return 200;
+  }
 }
