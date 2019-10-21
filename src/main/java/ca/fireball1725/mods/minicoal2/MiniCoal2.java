@@ -16,10 +16,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package cafireball1725.mods.minicoal2;
+package ca.fireball1725.mods.minicoal2;
 
-import cafireball1725.mods.minicoal2.common.Groups;
-import cafireball1725.mods.minicoal2.items.Items;
+import ca.fireball1725.mods.minicoal2.common.Groups;
+import ca.fireball1725.mods.minicoal2.items.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
