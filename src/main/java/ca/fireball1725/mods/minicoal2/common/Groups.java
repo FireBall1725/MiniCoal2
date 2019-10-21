@@ -16,9 +16,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package cafireball1725.mods.minicoal2.common;
+package ca.fireball1725.mods.minicoal2.common;
 
-import cafireball1725.mods.minicoal2.items.Items;
+import ca.fireball1725.mods.minicoal2.items.Items;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

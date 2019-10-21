@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package cafireball1725.mods.minicoal2.items;
+package ca.fireball1725.mods.minicoal2.items;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;

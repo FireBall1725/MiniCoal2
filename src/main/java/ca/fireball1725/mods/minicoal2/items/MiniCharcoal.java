@@ -16,9 +16,9 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package cafireball1725.mods.minicoal2.items;
+package ca.fireball1725.mods.minicoal2.items;
 
-import cafireball1725.mods.minicoal2.MiniCoal2;
+import ca.fireball1725.mods.minicoal2.MiniCoal2;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
