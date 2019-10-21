@@ -1,4 +1,5 @@
 /*
+!/.circleci
 !/.gitignore
 !/.gitmodules
 !/src
@@ -13,6 +14,7 @@
 !/build.bat
 !/build.sh
 !/gradle.properties
+!/settings.gradle
 !/webresources
-!/.circleci
+!/.chglog
 .DS_Store
