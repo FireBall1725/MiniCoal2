@@ -16,32 +16,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.fireball1725.minicoal2.items;
+package ca.fireball1725.mods.minicoal2.common;
 
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
+import ca.fireball1725.mods.minicoal2.items.Items;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 
-public enum Items {
-  MINICOAL(new MiniCoal()),
-  MINICHARCOAL(new MiniCharcoal());
-
-  public final Item item;
-
-  Items(Item item) {
-    this.item = item;
-  }
-
-  public static void registerItems(RegistryEvent.Register<Item> event) {
-    for (Items i : Items.values()) {
-      i.register(event);
+public class Groups {
+  public ItemGroup itemGroup = new ItemGroup("minicoal2") {
+    @Override
+    public ItemStack createIcon() {
+      return new ItemStack(Items.MINICOAL.getItem());
     }
-  }
-
-  public void register(RegistryEvent.Register<Item> event) {
-    event.getRegistry().register(this.item);
-  }
-
-  public Item getItem() {
-    return this.item;
-  }
+  };
 }
