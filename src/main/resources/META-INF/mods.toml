@@ -21,6 +21,6 @@ description="MiniCoal2 is a tiny mod that adds mini coal and charcoal that each 
 [[dependencies.minicoal2]]
   modId="minecraft"
   mandatory=true
-  versionRange="[1.14.4]"
+  versionRange="[1.16.1]"
   ordering="NONE"
   side="BOTH"
