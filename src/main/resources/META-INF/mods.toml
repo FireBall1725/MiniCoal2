@@ -1,6 +1,7 @@
 modLoader="javafml"
 loaderVersion="[28,)"
 issueTrackerURL="https://github.com/FireBall1725/minicoal2/issues"
+license="GNU GENERAL PUBLIC LICENSE"
 
 [[mods]]
 modId="minicoal2"
